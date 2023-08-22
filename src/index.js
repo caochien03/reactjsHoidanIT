@@ -11,23 +11,25 @@ import Admin from "./components/Admin/Admin";
 import HomePage from "./components/Home/HomePage";
 import DashBoard from "./components/Admin/Content/dashBoard";
 import ManageUser from "./components/Admin/Content/manageUser";
+import Login from "./components/Auth/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route index element={<HomePage />} />
-          <Route path="/Users" element={<User />} />
-        </Route>
-        <Route path="/Admins" element={<Admin />}>
-          <Route index element={<DashBoard />} />
-          <Route path="manage-user" element={<ManageUser />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  </Provider>
+    <Provider store={store}>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<App />}>
+                    <Route index element={<HomePage />} />
+                    <Route path="/Users" element={<User />} />
+                </Route>
+                <Route path="/Admins" element={<Admin />}>
+                    <Route index element={<DashBoard />} />
+                    <Route path="manage-user" element={<ManageUser />} />
+                </Route>
+                <Route path="/login" element={<Login />} />
+            </Routes>
+        </BrowserRouter>
+    </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
